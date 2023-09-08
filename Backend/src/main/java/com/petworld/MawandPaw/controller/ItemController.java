@@ -3,6 +3,7 @@ package com.petworld.MawandPaw.controller;
 import com.petworld.MawandPaw.model.Item;
 import com.petworld.MawandPaw.repo.ItemRepo;
 import com.petworld.MawandPaw.service.ItemService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,17 +27,18 @@ public class ItemController {
         return null;
     }
 
+    // Create new item
     @PostMapping()
     public ResponseEntity<?> addNewItem(@RequestBody Item item) {
-        // To do
         itemService.createNewItem(item);
         return null;
     }
 
+    // Endpoint delete an item using id
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteItem() {
-        // To do
-        return null;
+    public ResponseEntity<String> deleteItem(@PathVariable String id) {
+            String result = itemService.deleteItemById(id);
+            return ResponseEntity.ok(result);
     }
     @PutMapping("/edit/{id}")
     public ResponseEntity<?> editItemDetails() {

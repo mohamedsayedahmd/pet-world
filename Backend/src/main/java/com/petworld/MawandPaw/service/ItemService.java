@@ -1,6 +1,7 @@
 package com.petworld.MawandPaw.service;
 
 import com.petworld.MawandPaw.controller.exception.ItemAlreadyExistsException;
+import com.petworld.MawandPaw.controller.exception.NotFoundException;
 import com.petworld.MawandPaw.model.Item;
 import com.petworld.MawandPaw.repo.ItemRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,19 @@ public class ItemService {
         }else {
             throw new ItemAlreadyExistsException("Item with ID " + item.getId() + " already exists.");
         }
-
     }
+
+
+
+    // Delete user by id
+    public String deleteItemById(String id) {
+        Optional<Item> optionalUser = itemRepo.findById(id);
+        if (optionalUser.isPresent()) {
+            itemRepo.deleteById(id);
+            return "User with ID " + id + " was deleted successfully";
+        } else {
+            throw new NotFoundException("Item with ID " + id + " not found.");
+        }
+    }
+
 }
