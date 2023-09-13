@@ -1,0 +1,31 @@
+/* NavBar.css */
+.navbar {
+    background-color: #333; /* Set the background color to a dark color */
+    color: white; /* Set text color to white */
+    padding: 10px 0; /* Add padding to the top and bottom */
+  }
+  
+  .navbar-list {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the list horizontally */
+  }
+  
+  .navbar-item {
+    margin: 0 20px; /* Add some spacing between list items */
+  }
+  
+  .navbar-item a {
+    text-decoration: none; /* Remove underlines from links */
+    color: white; /* Set link text color to white */
+    font-weight: bold; /* Make the link text bold */
+    font-size: 18px; /* Adjust the font size */
+    transition: color 0.3s; /* Add a smooth color transition on hover */
+  
+    /* Optional: Add hover effect */
+    &:hover {
+      color: #f1c40f; /* Change the text color on hover */
+    }
+  }
+  

@@ -1,0 +1,10 @@
+.login_button{
+    width: 100px;
+}
+.login_button_title{
+    font-size: 15px;
+    font-weight: bold;
+}
+.shadow_login{
+    box-shadow: 5px 10px;
+}
