@@ -18,3 +18,8 @@
     /* font-size: 50%; */
     /* 50% of the parent */
 }
+----------------------------------------
+
+login_title
+
+font-family: 'Exo 2', sans-serif;

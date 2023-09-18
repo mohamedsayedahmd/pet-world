@@ -8,24 +8,24 @@ const Login:React.FC = () => {
   return (
     <div className="container">
       <Row className='border border-dark'>
-        <Col className="bg-primary">
-          <h1 className='d-flex justify-content-center' style={{color:"white"}}>Cat</h1>
+        <Col xs={4} className="bg-primary">
+          <h1 className='d-flex justify-content-center' style={{color:"white"}}>Pleasure</h1>
         </Col>
-        <Col className='d-flex justify-content-center bg-light'>
-          <h1>Nav Bar</h1>
+        <Col xs={4} className='d-flex justify-content-center bg-light'>
+          <h1>Pets</h1>
         </Col>
-        <Col className="bg-primary">
+        <Col xs={4} className="bg-primary">
           <h1 className='d-flex justify-content-center' style={{color:"white"}}>
-            Dog
+          Family
           </h1>
         </Col>
       </Row>
       <center className="mt-3">
-        <h1>L.o.g.i.n</h1>
+        <h1 className='login_title'>L.o.g.i.n</h1>
       </center>
 
-<div className='mt-4 mb-4'>
-  <p>Welcome back! We're glad to see you again.</p>
+<div className='mt-4 mb-5'>
+  <p className='custom-text'>Welcome back! We're glad to see you again.</p>
 </div>
 <div className=''>
   <LoginForm/>

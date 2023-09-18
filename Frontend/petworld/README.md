@@ -10,6 +10,6 @@
 
 <img src="public/assests/ReadMeImg/Login Page.png" width="300" />
 
-### Login
+### About Us
 
 <img src="public/assests/ReadMeImg/About page.png" width="300" />

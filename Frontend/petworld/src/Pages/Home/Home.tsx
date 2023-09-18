@@ -5,7 +5,7 @@ import { animated, useSpring, config,useTrail } from '@react-spring/web';
 const catImage = require('./Cat.jpg');
 const dogImage = require('./Dog.jpg');
 const fishImage = require('./Fish.jpg');
-
+const parrotImage = require('./Parro.jpg');
 
 
 const HomePage: React.FC = () => {
@@ -26,9 +26,9 @@ const HomePage: React.FC = () => {
   const articles = [
     {
       id: 1,
-      title: 'Article Title 1',
+      title: 'Parrot',
       description: 'This is a brief description of the first article content.',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: parrotImage,
     },
     {
       id: 2,

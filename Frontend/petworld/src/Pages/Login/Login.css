@@ -8,3 +8,22 @@
 .shadow_login{
     box-shadow: 5px 10px;
 }
+.login_title{
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+/* Small screens (phones) */
+@media (max-width: 767px) {
+    .custom-text {
+      font-size: 18px; /* Adjust the font size for phones */
+    }
+  }
+  
+  /* Larger screens (PCs) */
+  @media (min-width: 768px) {
+    .custom-text {
+      font-size: 25px; /* Adjust the font size for PCs */
+    }
+  }
+  
