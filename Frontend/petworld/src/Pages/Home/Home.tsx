@@ -1,8 +1,28 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import { animated, useSpring, config,useTrail } from '@react-spring/web';
+
+
 const catImage = require('./Cat.jpg');
 const dogImage = require('./Dog.jpg');
 const fishImage = require('./Fish.jpg');
+
+
+
 const HomePage: React.FC = () => {
+  const [animateElements, setAnimateElements] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimateElements(true);
+      
+    }, 500); // Adjust the delay as needed
+  }, []);
+  
+  const animationConfig = config.molasses;
+
+  
+  const [isToggled, setIsToggled] = useState<boolean>(false);
+
   const articles = [
     {
       id: 1,
@@ -43,21 +63,64 @@ const HomePage: React.FC = () => {
     const row = articles.slice(i, i + 5);
     rows.push(row);
   }
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    }
+  })
+  // CSS objects (css) {any css obj}
+  const fade2 = useSpring({
+    
+    //     opacity: isToggled ? 1 : 0,
+    // fontSize: isToggled ? "2rem" : "5em",
+    color: isToggled ? "green" : "red",
+    transform: isToggled ? 'translate3d(0, 0, 0)' : 'translate3d(0, -50px, 0)',
 
+  })
+
+  const fade3 = useSpring({
+    opacity: animateElements ? 1 : 0,
+    transform: animateElements ? 'translate3d(0, 0, 0)' : 'translate3d(0, -50px, 0)',
+
+  })
+
+
+  // Shorter
+  // const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
+
+  console.log(fade);
+
+  
   return (
     <div className="container mt-5">
       <header className="text-center">
+      <animated.div style={fade} >
         <h1 className="display-4">Welcome to Our Website</h1>
+      </animated.div>
         <p className="lead">Your go-to source for amazing content.</p>
       </header>
+
 
       <section className="mt-5">
         <h2 className="text-center">Featured Articles</h2>
         {rows.map((row, rowIndex) => (
           <div className="row" key={rowIndex}>
             {row.map((article) => (
-              <div className="col-md-4" key={article.id}>
-                <div className="card mb-4">
+
+
+                  <animated.div
+                  key={article.id}
+                  style={{
+                    opacity: animateElements ? 1 : 0,
+                    transform: animateElements ? 'translate3d(0, 0, 0)' : 'translate3d(0, -50px, 0)',
+                    transition: 'opacity 0.3s ease, transform 0.3s ease', // Optional: Add a smooth transition effect
+                    }}
+                  className="col-md-4"
+                  >
+                <div  className="card mb-4">
                   <img
                   style={{ minHeight: '414.4px' }}
                     src={article.imageUrl}
@@ -69,7 +132,10 @@ const HomePage: React.FC = () => {
                     <p className="card-text">{article.description}</p>
                   </div>
                 </div>
-              </div>
+
+              </animated.div>
+
+
             ))}
           </div>
         ))}
@@ -77,10 +143,19 @@ const HomePage: React.FC = () => {
 
       <section className="mt-5">
         <h3 className="text-center">Categories</h3>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <ul className="list-group list-group-horizontal justify-content-center">
           <li className="list-group-item"><a href="#">Category 1</a></li>
           <li className="list-group-item"><a href="#">Category 2</a></li>
           {/* Add more categories or links here */}
+          <animated.h1 style={fade2}>
+            Hello
+          </animated.h1>
+          <button onClick={() => setIsToggled((!isToggled))}>Toggle</button>
         </ul>
       </section>
     </div>
