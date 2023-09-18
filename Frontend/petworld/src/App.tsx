@@ -4,6 +4,7 @@ import HomePage from './Pages/Home/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from './Pages/Login/Login';
 import NavBar from './Components/NavBar/NavBar';
+import AboutUsPage from './Pages/AboutUsPage/AboutUsPage';
 function App() {
   return (
     <div className="app background"> {/* Apply the background class to the container */}
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
 
         </Routes>
       </Router>
