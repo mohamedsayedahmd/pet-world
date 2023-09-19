@@ -1,21 +1,25 @@
 .search_bar_title{
     font-family: 'Exo 2', sans-serif;
 }
-
-
-@media (max-width: 767px) {
-    .image-search-bar {
-        margin-top: 35px;
-       
-      }
+.image-search-bar {
+    max-width: 100%; /* Ensures the image does not exceed its container */
+    height: auto; /* Maintains aspect ratio */
   }
   
-  /* Larger screens (PCs) */
+
+/* Media query for smaller screens (e.g., smartphones) */
+@media (max-width: 767px) {
+    .image-search-bar {
+      width: 100%; /* Make the image occupy the full width of its container */
+      max-height: 240px; /* Set a maximum height if needed */
+    }
+  }
+  
+  /* Media query for larger screens (e.g., tablets and PCs) */
   @media (min-width: 768px) {
     .image-search-bar {
-        margin-top: 35px;
-        width: 450px;
-        height: 350px;
-      }
+      max-width: 450px; /* Set a maximum width for larger screens */
+      height: auto; /* Maintains aspect ratio */
+    }
   }
   
