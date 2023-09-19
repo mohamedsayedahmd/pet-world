@@ -6,6 +6,7 @@ import Login from './Pages/Login/Login';
 import NavBar from './Components/NavBar/NavBar';
 import AboutUsPage from './Pages/AboutUsPage/AboutUsPage';
 import Search from './Pages/Search/Search';
+import Register from './Pages/Register/Register';
 function App() {
   return (
     <div className="app background"> {/* Apply the background class to the container */}
@@ -13,6 +14,7 @@ function App() {
       <NavBar/>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/search" element={<Search />} />

@@ -1,4 +1,10 @@
 /* NavBar.css */
+
+.web_site_title{
+  margin-left: 8px;
+  font-family: 'Exo 2', sans-serif;
+}
+
 .navbar {
     background-color: #333; /* Set the background color to a dark color */
     color: white; /* Set text color to white */
@@ -29,3 +35,7 @@
     }
   }
   
+/* Add this rule to make the text yellow for active links */
+.nav-link.active {
+  color: yellow !important; /* Make sure the active link's color overrides other styles */
+}

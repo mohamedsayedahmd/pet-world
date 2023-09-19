@@ -1,11 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import { animated, useSpring, config,useTrail } from '@react-spring/web';
 
-
-const catImage = require('./Cat.jpg');
-const dogImage = require('./Dog.jpg');
-const fishImage = require('./Fish.jpg');
-const parrotImage = require('./Parro.jpg');
+const catImage = require('./../../assests/Images/pets/Cat.jpg');
+const dogImage = require('./../../assests/Images/pets//Dog.jpg');
+const fishImage = require('./../../assests/Images/pets/Fish.jpg');
+const parrotImage = require('./../../assests/Images/pets/Parro.jpg');
 
 
 const HomePage: React.FC = () => {
@@ -15,7 +14,7 @@ const HomePage: React.FC = () => {
     setTimeout(() => {
       setAnimateElements(true);
       
-    }, 500); // Adjust the delay as needed
+    }, 200); // Adjust the delay as needed
   }, []);
   
   const animationConfig = config.molasses;
