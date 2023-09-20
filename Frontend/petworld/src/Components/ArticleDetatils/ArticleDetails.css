@@ -1,0 +1,14 @@
+.article-details {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .article-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .article-content {
+    font-size: 16px;
+  }
+  

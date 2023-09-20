@@ -1,0 +1,29 @@
+/* Card.css */
+.link {
+  text-decoration: none;
+}
+ 
+  .card-image-container {
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* This ensures the image fills the container without stretching */
+  }
+
+  /* Hover Shadow */
+  .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 20px rgb(255, 234, 0);
+  }
+  
+  
