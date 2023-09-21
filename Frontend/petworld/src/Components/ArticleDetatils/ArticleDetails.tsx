@@ -1,42 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import "./ArticleDetails.css";
 
-import axios from "axios";
-
 const ArticleDetails = () => {
   const { id } = useParams();
-    // Placeholder article data for testing
-    const article = {
-      title: "Sample Article",
-      content: "This is the content of the sample article.",
-    };
-  
+  const parrotImageURL = require('./../../assests/Images/pets/facts-parrots.webp');
+  const articles = [
+    {
+      id: 1,
+      title: "Parrot",
+      description: "This is a brief description of the first article content.",
+    },
+    {
+      id: 2,
+      title: "Cat",
+      description: "This is a brief description of the first article content.",
+    },
+    // Add more articles here
+  ];
 
-//   const [article, setArticle] = useState<any>(null);
+  // Find the selected article based on its ID
+  const selectedArticle = articles.find((article) => article.id === Number(id));
 
-//   useEffect(() => {
-//     axios.get(`/api/articles/${id}`).then((response:any) => {
-//       setArticle(response.data);
-//     });
-//   }, [id]);
-
-//   if (!article) {
-//     return <div>Loading...</div>;
-//   }
+  if (!selectedArticle) {
+    return <div>Article not found.</div>;
+  }
 
   return (
     <div className="article-details">
-    <h1 className="article-title">{article.title}</h1>
-    <p className="article-content">{article.content}</p>
+    <h1 className="article-title">{selectedArticle.title}</h1>
+    {selectedArticle.title === "Parrot" && (
+      <img
+        src={parrotImageURL}
+        alt="Parrot"
+        style={{ width: "300px", height: "200px" }} // Adjust the width and height as needed
+      />
+    )}
+    <p className="article-content">{selectedArticle.description}</p>
+
+    {selectedArticle.title === "Parrot" && (
+      <div>
+     
+        <h2>More About Parrots</h2>
+        <p>
+          Parrots are highly intelligent birds known for their vibrant plumage
+          and ability to mimic human speech. They are found in tropical and
+          subtropical regions...
+        </p>
+        <p>
+          Parrots are social creatures and often form strong bonds with their
+          owners. They require a balanced diet that includes fruits, vegetables,
+          and nuts...
+        </p>
+        {/* Add more information as needed */}
+      </div>
+    )}
   </div>
   );
 };
 
 export default ArticleDetails;
-
-    // <div>
-    //     <h1>Article</h1>
-    //   {/* <h1>{article.title}</h1>
-    //   <p>{article.content}</p> */}
-    // </div>
